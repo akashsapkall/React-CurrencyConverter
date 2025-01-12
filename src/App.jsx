@@ -29,7 +29,11 @@ function App() {
 
   return (
     <div className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat">
+
       <div className="w-full">
+        <div className="w-fit mx-auto my-7 text-2xl font-semibold">
+          <span>Currency Converter App</span>
+        </div>
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-gray-400">
           <form
             onSubmit={(e) => {
@@ -76,7 +80,7 @@ function App() {
               type="submit"
               className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
             >
-              {`Convert From ${from} To ${to}`}
+              {`Convert From ${from.toUpperCase()} To ${to.toUpperCase()}`}
             </button>
           </form>
         </div>
