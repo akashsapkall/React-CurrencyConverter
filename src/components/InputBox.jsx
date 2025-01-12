@@ -1,14 +1,13 @@
 import React from "react";
 
 function InputBox({
-    label,
+    label="ak",
     amount=0,
     currencyList=[],
     selectCurrency="usd",
     onAmountChange,
     onCurrencyChange,
-    amountDisabled="false",
-    className = "",
+    amountDisabled=false,
 }) {
    
 
@@ -20,9 +19,9 @@ function InputBox({
                 </label>
                 <input
                     
-                    className="outline-none w-full bg-transparent py-1.5"
+                    className="pl-2 outline-none w-full bg-gray-200 py-1.5 rounded"
                     type="number"
-                    placeholder="Amount"
+                    placeholder="amount"
                     disabled={amountDisabled}
                     value={amount}
                     onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
@@ -35,9 +34,9 @@ function InputBox({
                     value={selectCurrency}
                     onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
                 >
-                        <option key={selectCurrency} value={selectCurrency} selected>
+                        {/* <option key={selectCurrency} value={selectCurrency} selected>
                             {selectCurrency}
-                            </option>
+                            </option> */}
                         {currencyList.map((currency)=>(
                                 <option key={currency} value={currency}>{currency}</option>
                         ))}           
